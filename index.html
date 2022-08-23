@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Money Master</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+    <header>
+        <h1 class="text-center text-5xl font-semibold">Money Master</h1>
+    </header>
+    <main>
+        <section>
+            <div class="grid grid-cols-2 gap-4 mt-10">
+                <div>
+                   <img class="h-96" src="images/img-1.png" alt="">
+                </div>
+                <div class="bg-slate-200">
+                    <form class="mx-12 mt-6">
+                        <h3 class="text-center mt-10 ">Income</h3><br>
+                        <label class="mx-6" for="income" class=" mt-12">Income:</label>
+                        <input type="text" name="" id="income-field"><br><br>
+                        <h3 class="text-center">Expenses</h3><br>
+                        <label class="mx-8" for="food">Food:</label>
+                        <input type="text" name="" id="food-field"><br><br>
+                        <label  class="mx-8" for="rent">Rent:</label>
+                        <input type="text" name="" id="rent-field"><br><br>
+                        <label  class="mx-5" for="clothes">Clothes:</label>
+                        <input type="text" name="" id="clothes-field">
+                    </form>
+                    <button id="btn-calculate" class="bg-amber-600 hover:bg-sky-700 px-8 py-2 text-white font-medium rounded-lg mt-6 ml-12">Calculate</button>
+                    <h2 class="text-center mt-6">Total Expenses:<span id="expenses-field">000</span></h2>
+                    <h2 class="text-center">Balance:<span id="balance-field">000</span></h2>
+    
+                    <label class="mx-6" for="income" class=" mt-12">Save %:</label>
+                        <input class="w-1/6" type="text" name=""  id="save-input">
+                        <button id="btn-save" class=" w-1/6 bg-blue-600 hover:bg-green-700 px-5 py-1 text-white font-medium mt-6">Save </button>
+                        <h3 class="text-center mt-12">Saving Amount:<span id="saving_amount">000</span></h3>
+                        <h3 class="text-center">Remaining Balance:<span id="remaining_amount" >000</span></h3>
+                </div>
+            </div>
+        </section>
+    </main>
+    <script src="js/money.js"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--main part start-->
+<main class="bg-primary mt-5 container">
+    <section>
+        <div class="row">
+          <div class="d-flex col-7 mt-4">
+            <div class="row row-cols-3  g-4 ">
+                <div class="col">
+                    <div class="card h-50">
+                      <img src="images/player-1.png" class="card-img-top" alt="...">
+                      <div class="card-body bg-secondary">
+                        <h5 class="card-title players-name">kylin Mbappe</h5>
+                        <p class="card-text">63 Goals . 100  Assist</p>
+                        <button class="btn btn-success btn-selected" onclick="selectLi()">Selected</button>
+                      </div>
+                    </div>
+                  </div>
+            <div class="col">
+              <div class="card h-50">
+                <img src="images/player-2.png" class="card-img-top" alt="...">
+                <div class="card-body bg-secondary">
+                  <h5 class="card-title">Neymar Jr</h5>
+                  <p class="card-text">36 Goals . 120 Assist</p>
+                  <button class="btn btn-success btn-selected" onclick="selectLi()">Selected</button>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="card h-50">
+                <img src="images/player-3..png" class="card-img-top" alt="...">
+                <div class="card-body bg-secondary">
+                  <h5 class="card-title">Lionel Messi</h5>
+                  <p class="card-text">162 Goals . 49 Assist</p>
+                  <button class="btn btn-success btn-selected" onclick="selectLi()">Selected</button>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="card h-50">
+                <img src="images/player-4..png" class="card-img-top" alt="...">
+                <div class="card-body bg-secondary">
+                  <h5 class="card-title">Hal Robson</h5>
+                  <p class="card-text">30 Goals . 80 Assist</p>
+                  <button class="btn btn-success btn-selected" onclick="selectLi()">Selected</button>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+                <div class="card h-50">
+                  <img src="images/player-5.png" class="card-img-top" alt="...">
+                  <div class="card-body bg-secondary">
+                    <h5 class="card-title">Javier Pastore</h5>
+                    <p class="card-text">35 Goals . 50 Assist</p>
+                    <button class="btn btn-success btn-selected" onclick="selectLi()">Selected</button>
+                  </div>
+                </div>
+              </div>
+              <div class="col">
+                <div class="card h-50">
+                  <img src="images/player-6..png" class="card-img-top" alt="...">
+                  <div class="card-body bg-secondary">
+                    <h5 class="card-title">David Beckham</h5>
+                    <p class="card-text">61 Goals . 71 Assist</p>
+                    <button class="btn btn-success btn-selected" onclick="selectLi()">Selected</button>
+                  </div>
+                </div>
+              </div>
+              <div class="col">
+                <div class="card h-50">
+                  <img src="images/player-7..png" class="card-img-top" alt="...">
+                  <div class="card-body bg-secondary">
+                    <h5 class="card-title">Arshavin</h5>
+                    <p class="card-text">31 Goals . 41 Assist</p>
+                    <button class="btn btn-successbtn-selected" onclick="selectLi()">Selected</button>
+                  </div>
+                </div>
+              </div>
+              <div class="col">
+                <div class="card h-50">
+                  <img src="images/player-8..png" class="card-img-top" alt="...">
+                  <div class="card-body bg-secondary">
+                    <h5 class="card-title">Thiago Silva</h5>
+                    <p class="card-text"> 30 Goals . 67 Assist</p>
+                    <button class="btn btn-success btn-selected" onclick="selectLi()">Selected</button>
+                  </div>
+                </div>
+              </div>
+              <div class="col">
+                <div class="card h-50">
+                  <img src="images/player-9.png" class="card-img-top" alt="...">
+                  <div class="card-body bg-secondary">
+                    <h5 class="card-title">Harry Kane</h5>
+                    <p class="card-text">70 Goals . 43 Assist</p>
+                    <button class="btn btn-success btn-selected" onclick="selectLi()">Selected</button>
+                  </div>
+                </div>
+              </div>
+          </div>
+      </div>
+        <div class="mt-4 col-5 ">  
+            <div class="card mb-3 d-flex bg-dark text-white">
+                <div class="card-body">
+                  <h5 class="card-title text-center">Selected-V</h5>
+                  <ul id="list-item">
+                 
+                  </ul>
+                </div>
+              </div>
+              <div class="card bg-dark text-white">
+                <div class="card-body ">
+                  <h5 class="card-title text-center">Budget</h5>
+                  <form>
+                    <label for="player">Per Player</label>
+                    <input  type="text" name="" id="player_cost">
+                    <button class="btn btn-warning mt-3" id="btn_calculate">Calculate</button>
+                    <h2 class="fs-5 mt-4 text-white">Player Expenses <span id="expenses_cost">$</span></h2><br>
+                    <label for="">Manager</label>
+                    <input type="text" id="manager"><br>
+                    <label  for="">Coach</label>
+                    <input class="mt-2 ms-3" type="text" id="coach">
+                    <button class="btn btn-warning mt-3" id="btn_calculate_total" onclick="total_cost_calulate()">Calculate Total</button>
+                    <h2 class="fs-4 mt-3">Total <span id="total_cost">$</span></h2>
+                 </form>
+                </div>
+              </div>
+        </div>
+       </div>
+    </section>
+</main>
+<!--main part end-->
+
+
+
+
+<footer class="bg-primary mt-5  " style="height: 100px;">
+    <p class="text-center pt-4">Copyright @ 2022 All Rights Reserved</p>
+</footer>
+<script src="js/player.js"></script>
